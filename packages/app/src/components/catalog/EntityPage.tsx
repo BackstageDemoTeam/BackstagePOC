@@ -153,18 +153,18 @@ const overviewContent = (
 
     <Grid container spacing={3} alignItems="stretch">
       <EntitySwitch>
-        <EntitySwitch.Case if={e => Boolean(isGithubInsightsAvailable(e))}>
-          <Grid item md={6}>
-            <EntityGithubInsightsLanguagesCard />
-            <EntityGithubInsightsReleasesCard />
-          </Grid>
-          <Grid item md={6}>
-            <EntityGithubInsightsReadmeCard maxHeight={350} />
-          </Grid>
-        </EntitySwitch.Case>
-      </EntitySwitch>
+          <EntitySwitch.Case if={e => Boolean(isGithubInsightsAvailable(e))}>
+            <Grid item md={6}>
+              <EntityGithubInsightsLanguagesCard />
+              <EntityGithubInsightsReleasesCard />
+            </Grid>
+            <Grid item md={6}>
+              <EntityGithubInsightsReadmeCard maxHeight={350} />
+            </Grid>
+          </EntitySwitch.Case>
+        </EntitySwitch>
     </Grid>
-    
+
   </Grid>
 );
 
@@ -204,9 +204,7 @@ const serviceEntityPage = (
       {techdocsContent}
     </EntityLayout.Route>
 
-    <EntityLayout.Route 
-      path="/code-insights"
-      title="Code Insights">
+    <EntityLayout.Route path="/code-insights" title="Code Insights">
       <EntityGithubInsightsContent />
     </EntityLayout.Route>
 
@@ -237,6 +235,11 @@ const websiteEntityPage = (
     <EntityLayout.Route path="/docs" title="Docs">
       {techdocsContent}
     </EntityLayout.Route>
+
+    <EntityLayout.Route path="/code-insights" title="Code Insights">
+      <EntityGithubInsightsContent />
+    </EntityLayout.Route>
+
   </EntityLayout>
 );
 
