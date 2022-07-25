@@ -79,6 +79,11 @@ import {
   isGithubInsightsAvailable,
   } from '@roadiehq/backstage-plugin-github-insights';
 
+import { EntityGithubPullRequestsContent,
+  EntityGithubPullRequestsOverviewCard } from '@roadiehq/backstage-plugin-github-pull-requests';
+
+import { EntityTeamPullRequestsCard } from '@backstage/plugin-github-pull-requests-board';
+
 const techdocsContent = (
   <EntityTechdocsContent>
     <TechDocsAddons>
@@ -165,6 +170,10 @@ const overviewContent = (
         </EntitySwitch>
     </Grid>
 
+    <Grid item md={6}>
+      <EntityGithubPullRequestsOverviewCard />
+    </Grid>
+
   </Grid>
 );
 
@@ -208,6 +217,14 @@ const serviceEntityPage = (
       <EntityGithubInsightsContent />
     </EntityLayout.Route>
 
+    <EntityLayout.Route path="/pull-requests" title="Pull Requests">
+      <EntityGithubPullRequestsContent />
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/github-actions" title="GitHub Actions">
+      <EntityGithubActionsContent />
+    </EntityLayout.Route>
+
   </EntityLayout>
 );
 
@@ -238,6 +255,10 @@ const websiteEntityPage = (
 
     <EntityLayout.Route path="/code-insights" title="Code Insights">
       <EntityGithubInsightsContent />
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/pull-requests" title="Pull Requests">
+      <EntityGithubPullRequestsContent />
     </EntityLayout.Route>
 
   </EntityLayout>
@@ -340,6 +361,9 @@ const groupPage = (
         </Grid>
         <Grid item xs={12}>
           <EntityMembersListCard />
+        </Grid>
+        <Grid item xs={12}>
+          <EntityTeamPullRequestsCard />
         </Grid>
       </Grid>
     </EntityLayout.Route>
