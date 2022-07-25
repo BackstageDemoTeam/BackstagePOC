@@ -5,11 +5,11 @@ metadata:
   description: An example of a Backstage application.
   # Example for optional annotations
   annotations:
-    github.com/project-slug: Gracelyn-Mystica/BackstagePOC
+    github.com/project-slug: BackstageDemoTeam/BackstagePOC
     backstage.io/techdocs-ref: dir:.
 spec:
   # type: website
   # owner: john@example.com
   type: service
-  owner: user:Gracelyn-Mystica
+  owner: BackstageDemoTeam
   lifecycle: experimental
