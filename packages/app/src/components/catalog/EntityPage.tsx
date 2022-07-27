@@ -224,6 +224,9 @@ const serviceEntityPage = (
     <EntityLayout.Route path="/github-actions" title="GitHub Actions">
       <EntityGithubActionsContent />
     </EntityLayout.Route>
+    <EntityLayout.Route path="/github-pull-request-board" title="PR Board">
+      <EntityTeamPullRequestsCard />
+    </EntityLayout.Route>
 
   </EntityLayout>
 );
